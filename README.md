@@ -19,7 +19,6 @@ We list here the folders and files of the repository with a short description
 **Folders**
 
 - **data**: the MNIST, Fashion-MNIST and CIFAR-10 datasets
-- **eevbnn**: the code for the MiniSatCS solver from the paper [Efficient and Exact Verification of Binarized Neural Networks](https://github.com/jia-kai/eevbnn)
 - **scripts_from_EEV**: the different scripts from the previously cited papers, used for inspiration in this work
 - **results_imgs_graphs**: the different results, graphs and generated adversarial images, of our paper
     - **saved_attacks**: results obtained after performing an attack with a fixed perturbation against an adversarially trained model
@@ -42,9 +41,12 @@ We list here the folders and files of the repository with a short description
 - **requirements.txt**: the required packages to run MiniSatCS and our code
 - **standard_model.py**: implementation of a classical neural network with Pytorch, closed to the type 1 BNN
 
-## Building MiniSatCS
+## MiniSatCS
 ---
-Please refer to the original paper of MiniSatCS: [Efficient and Exact Verification of Binarized Neural Networks](https://github.com/jia-kai/eevbnn)
+The code for the MiniSatCS solver has to be downloaded from its [original repository](https://github.com/jia-kai/eevbnn) and has to be placed in a folder name "eevbnn" at the same level than the other folders of this repository.
+
+Instructions to build it are available on its original repository.
+
 
 
 
