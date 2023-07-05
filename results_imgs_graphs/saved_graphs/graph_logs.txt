@@ -1,0 +1,501 @@
+Explanations of the tests for each graph obtained
+
+--- 01
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 images with random noise [0, 0.5] each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adversarial test acc : 4000 adversarial images (35000->40000)
+
+
+--- 02
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 adversarial images with eps 0.5 from 5 models each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 4000 adversarial images (35000->40000)
+
+
+--- 03
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 images with random noise [0, 0.5] each epoch
+    recreate the model at each Epoch
+
+testing :
+    original test acc : 3000 original data
+    noise test acc : 5000 images with random noise [0, 0.5] (35000->40000)
+    
+
+--- 04
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 adversarial images with eps 0.5 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    noise test acc : 5000 images with random noise [0, 0.5] (35000->40000)
+
+
+--- 05
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 images with high random noise [0.35, 0.5] each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 4000 adversarial images (35000->40000)
+
+
+--- 06
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 images with high random noise [0.35, 0.5] each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 5000 images with high random noise [0.35, 0.5] (35000->40000)
+
+
+--- 07
+training :
+    on model 1
+    3000 original images
+    25 robust epochs, adding 500 adversarial images with eps 0.5 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 5000 images with high random noise [0.35, 0.5] (35000->40000)
+
+
+--- 08 INVALID (adv images for fashion are not really adversarial)
+training :
+    on model 1
+    with FASHION dataset (!)
+    3000 original images
+    10 robust epochs, adding 500 adversarial images with eps 0.5 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 3000 adversarial images with eps 0.5
+
+
+--- 09 INVALID (adv images for fashion are not really adversarial)
+training :
+    on model 4 (!)
+    with fashion dataset (!)
+    3000 original images
+    10 robust epochs, adding 500 adversarial images with eps 0.5 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 3000 adversarial images with eps 0.5
+
+
+--- 10
+training :
+    on model 1
+    mnist 
+    3000 original images
+    6 robust epochs, adding 500 adv images with eps 0.2 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 2286 adversarial images with eps 0.2
+
+
+--- 11
+training :
+    on model 1
+    mnist 
+    3000 original images
+    6 robust epochs, adding 500 adv images with eps 0.2 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 4033 adversarial images with eps 0.5 (35000->40000)
+
+
+--- 12
+training :
+    on model 1
+    mnist
+    3000 original images
+    25 robust epochs, adding 500 adv images with eps 0.5 each epoch
+    recreate the model at each epoch
+
+testing :
+    original test acc : 3000 original data
+    adv test acc : 2286 adversarial images with eps 0.2 (3000->10000)
+
+
+--- 13
+training :
+    on model 1
+    mnist
+    3000 original images
+    10 robust epochs, adding 500 original images each epoch
+    recreate model at each epoch
+    NOTE : sanity check that it is not just the fact of adding data that is helpful
+
+testing :
+    only on original images
+
+
+--- 14
+training
+    on model 1
+    mnist
+    3000 original images
+    10 robust epochs, adding 500 original images each epoch
+    recreate model at each epoch
+    NOTE : sanity check that it is not just the fact of adding data that is helpful
+
+testing :
+    original test acc : 3000 original images
+    adv test acc : on adv images with eps 0.5 (35000->40000)
+
+
+--- 15
+training :
+    on model 1
+    mnist
+    3000 original images
+    25 robust epochs, adding 500 adversarial images with eps 0.5 each epoch
+    recreate model at each epoch
+
+testing :
+    original test acc : 3000 original images from test set
+    adv test acc : 9760 adversarial images with eps 0.5 from test set !
+
+
+--- 16
+training :
+    model similar to model 1 BUT not binarized !
+    mnist
+    3000 original images
+    25 robust epochs, adding 500 adversarial images with eps 0.5 each epoch
+    recreate model at each epoch
+
+testing :
+    original test acc : 3000 original images from test set
+    adv test acc : 9760 adversarial images (test set) with eps 0.5
+
+
+--- 17
+training :
+    model 1
+    mnist
+    3000 adversarial images with eps 0.5
+    25 robust epochs, adding 500 original images each epoch
+    recreate model at each epoch
+
+testing :
+    original test acc : 3000 orignal images from test set
+    adv test acc : 9760 adversarial images (test set) with eps 0.5
+
+note :
+    "reverse" situation than before : consider first adv and adding original
+    to check that the effect of the robust train loop does not come from the simple addition of data and testing on them after
+
+
+--- 18
+training :
+    model 1
+    fashion
+    3000 original images
+    25 robust epochs, 500 adversarial images with eps 0.5 added each epoch
+    recreate model each epoch
+
+testing :
+    original acc : 3000 original images from test set
+    adversarial acc : 9296 adversarial images with eps 0.5 from test set
+
+
+--- 19
+training :
+    model 1
+    cifar10
+    3000 original images 
+    eps 0.5
+
+testing :
+    400 adv imgs eps 0.5
+
+note : loop is correct but images mean nothing -> forget this test
+
+
+--- 20
+training :
+    model 1
+    mnist
+    3000 original images
+    25 robust epochs, add 500 adv img with eps 0.5 each epoch
+
+testing :
+    original : 10000 original images
+    adversarial : 9760 adv imgs with eps 0.5
+    with metric : absolute evaluation robustness
+
+
+--- 21
+training :
+    model 1
+    mnist
+    3000 original images
+    25 robust epochs, add 500 adv img with eps 0.5 each epoch
+
+testing :
+    original : 10000 original images
+    adversarial : 9760 adv imgs with eps 0.5
+    with metric : ratio evaluation robustness
+
+
+--- 22
+training :
+    model 1
+    mnist
+    3000 original images
+    25 robust epochs, add 500 adv img with eps 0.5 each epoch
+
+testing :
+    original : 10000 original images
+    adversarial : 9760 adv imgs with eps 0.5
+    with metric : ratio reverse evaluation robustness
+
+
+--- 23
+training :
+    5 models 1, majority voting
+    mnist 
+    3000 original images
+    25 robust epochs, add 500 adv img with eps 0.5 each epoch 
+
+testing :
+    original : 10000 original images 
+    adversarial : 9760 adv img with eps 0.5
+    with majority voting for adversarial accuracy
+
+
+--- 24
+training :
+    5 models 1, majority voting
+    fashion
+    5000 original images, 25 training epochs
+    12 robust epochs, add 500 adv img with eps 0.5 each epoch, cheat approach
+
+testing :
+    original : 10000 original images
+    adversarial : adv test set eps 0.5
+
+note : validation of results on fashion eps 0.5
+
+
+--- 25
+training :
+    5 models 1, majority voting
+    mnist
+    3000 original images, 25 training epochs
+    12 robust epochs, add 500 adv img eps 0.2 each epoch, cheat approach
+
+testing :
+    original : 10k original images
+    adv : adv test set 0.2
+
+
+--- 26
+
+
+
+--- 27
+training :
+    5 models 1, majority voting 
+    fashion
+    5000 original samples, 25 training epochs
+    12 robust epochs, add 500 adv imgs eps 0.5 each epoch, generation approach
+
+testing :
+    original : 10k original samples
+    adv : adv test set fashion 0.5
+
+
+--- 28
+
+
+--- 29
+training :
+    5 models 1, majority voting
+    cifar
+    10k original samples, 25 training epochs
+    12 robust epochs, add 500 adv img eps 0.1 each epoch, generation approach
+
+testing :
+    original : 10k original samples
+    adv : adv test set cifar 0.1
+
+
+--- 30
+training :
+    5 models 1, majority voting
+    fashion
+    5000 original samples, 25 training epochs
+    12 robust epochs, add 500 adv img eps 0.2 each epoch, cheat approach
+
+testing :
+    original : 10k original samples
+    adv : adv test set fashion eps 0.2
+
+
+--- 31
+training :
+    5 models 1, majority voting
+    cifar 
+    5000 original samples, 25 training epochs
+    12 robust epoch, add 500 adv img each epoch, cheat approach
+
+testing :
+    original : 10k original samples
+    adv : adv test set cifar 0.1
+
+
+--- 32
+training :
+    5 models 1, majority voting
+    mnist
+    50000 original samples, 25 training epochs
+    50 robust epochs, adding 1000 adv eps 0.5 each epoch with cheat approach
+
+testing :
+    original and adv test sets
+
+note : full adv training with cheat approach
+
+
+--- 33
+training :
+    5 models 1, majority voting
+    mnist
+    50000 original samples, 25 training epochs
+    50 robust epochs, adding 1000 adv eps 0.5 each epoch with generation approach
+
+testing :
+    original and adv test sets
+
+note : full adv training with generation approach
+
+
+--- 34
+training :
+    5 models 4 majority voting
+    mnist
+    10k original samples, 25 training epochs
+    12 robust epochs, adding 500 adv eps 0.5 each Epoch with cheat
+
+testing :
+    original and adv test sets
+
+note : comparison with models 4
+
+
+--- 35
+training :
+    5 models 4 majority voting
+    mnist
+    10k original samples, 25 training epochs
+    12 robust epochs, adding 500 adv eps 0.5 each Epoch with generation
+
+testing :
+    original and adv test sets
+
+note : comparison with models 4
+
+
+--- 36
+training :
+    5 models 1 majority voting
+    mnist
+    10k original samples, 25 training epochs
+    12 robust epochs, adding 500 adv eps 0.5 each Epoch with generation
+    with all robustness metrics
+
+testing :
+    original and adv test sets
+
+note : check all the robustness metrics for generation
+
+
+--- 37
+training :
+    5 models 1 majority voting
+    mnist
+    10k original samples, 25 training epochs
+    12 robust epochs, adding 500 adv eps 0.5 each Epoch with cheat
+    with all robustness metrics
+
+testing :
+    original and adv test sets
+
+note : check all the robustness metrics for cheat
+
+
+
+
+------------------------------------------------------------------------------------
+
+
+comp_adv_noise_training_testadv.pdf
+    regroups tests 01 and 02 for comparison
+
+
+comp_adv_noise_training_testnoise.pdf
+    regroups tests 03 and 04 for comparison
+
+
+comp_adv_highnoise_training_testadv.pdf
+    regroups tests 02 and 05 for comparison
+
+
+comp_adv_highnoise_training_testhighnoise.pdf
+    regroups tests 06 and 07 for comparison
+
+
+comp_adv_robustLoop_cheat_generation.pdf
+    compares the cheat approach and the generation approach for the robust loop
+
+
+comp_robustLoop_time_ngeneration.pdf
+    plots the time needed to generate the images (for the previous test with generation vs cheat)
+
+
+comp_adv_standard_BNN.pdf
+    compares the robust loop cheat approach between a BNN and an equivalent NN with pytorch
+
+
+comp_adv_majority_all.pdf
+    compares the following tests 
+        - robust train loop cheat with 1 model 
+        - robust train loop cheat with 5 models and compute mean
+        - robust train loop generation with 5 models and compute mean
+        - robust train loop cheat with 5 models and majority voting
+
+

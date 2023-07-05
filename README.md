@@ -24,7 +24,7 @@ We list here the folders and files of the repository with a short description
 - **results_imgs_graphs**: the different results, graphs and generated adversarial images, of our paper
     - **saved_attacks**: results obtained after performing an attack with a fixed perturbation against an adversarially trained model
     - **saved_eps_graphs**: graphs and results of the method to assess the robustness according to the resistance of a model against the attack
-    - **saved_generated_data**: all the generated adversarial images from MNIST, Fashion-MNIST and CIFAR-10 datasets with their corresponding indexes from their original dataset
+    - **saved_generated_data**: all the generated adversarial images from MNIST, Fashion-MNIST and CIFAR-10 datasets with their corresponding indexes from their original dataset. Due to size restriction, these data are available on this [OneDrive folder](https://uclouvain-my.sharepoint.com/:f:/g/personal/benoit_ronval_student_uclouvain_be/Eqm9cuDnyrNCj8pe8hL4znMBYxGPzvFUQtjA6nfFUOYPGw?e=BzQpvJ)
     - **saved_graphs**: experiments with the robust training loop algorithm and their results as graphs
     - **saved_imgs_thesis**: all the images used in the paper (and more)
     - **saved_models_eevbnn**: some of the trained models used for the experiments
